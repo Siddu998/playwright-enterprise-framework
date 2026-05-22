@@ -1,5 +1,10 @@
 # Playwright Enterprise Framework
 
+![Playwright](https://img.shields.io/badge/Playwright-Automation-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-Framework-blue)
+![API Testing](https://img.shields.io/badge/API-Testing-orange)
+![POM](https://img.shields.io/badge/Framework-POM-purple)
+
 Enterprise-grade Playwright + TypeScript automation framework designed for scalable UI and API automation testing.
 
 ---
