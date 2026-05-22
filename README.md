@@ -45,6 +45,12 @@ screenshots/
 
 ---
 
+# Framework Architecture
+
+Tests → Pages → Utilities → API Layer → Reports
+
+The framework follows scalable modular architecture using Playwright with reusable Page Object Model implementation and integrated API automation support.
+
 # Key Features
 
 ## UI Automation
