@@ -11,6 +11,18 @@ Enterprise-grade Playwright + TypeScript automation framework designed for scala
 
 ![Framework Architecture](./screenshots/framework-architecture.png)
 
+
+## Execution Commands
+
+Run all tests:
+```bash
+npx playwright test
+
+npx playwright test tests/login/login.spec.ts
+
+npx playwright test --headed
+
+npx playwright show-report
 ---
 
 # Tech Stack
