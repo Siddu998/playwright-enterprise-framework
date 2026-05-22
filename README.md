@@ -7,6 +7,10 @@
 
 Enterprise-grade Playwright + TypeScript automation framework designed for scalable UI and API automation testing.
 
+## Framework Architecture
+
+![Framework Architecture](./screenshots/framework-architecture.png)
+
 ---
 
 # Tech Stack
