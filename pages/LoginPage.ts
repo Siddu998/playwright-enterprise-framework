@@ -1,28 +1,29 @@
-import { Page, Locator } from '@playwright/test';
-import { BasePage } from './BasePage';
+import { Page } from '@playwright/test';
 
-export class LoginPage extends BasePage {
+export class LoginPage {
 
-  readonly username: Locator;
-  readonly password: Locator;
-  readonly loginButton: Locator;
+  constructor(private page: Page) {}
 
-  constructor(page: Page) {
-
-    super(page);
-
-    this.username = page.locator('#username');
-    this.password = page.locator('#password');
-    this.loginButton = page.locator('#login');
-
+  async navigateToLoginPage() {
+    await this.page.goto('https://example.com');
   }
 
-  async login(user: string, pass: string) {
+  async enterUsername(username: string) {
+    await this.page.locator('#username').fill(username);
+  }
 
-    await this.username.fill(user);
-    await this.password.fill(pass);
-    await this.loginButton.click();
+  async enterPassword(password: string) {
+    await this.page.locator('#password').fill(password);
+  }
 
+  async clickLogin() {
+    await this.page.locator('#login').click();
+  }
+
+  async login(username: string, password: string) {
+    await this.enterUsername(username);
+    await this.enterPassword(password);
+    await this.clickLogin();
   }
 
 }
