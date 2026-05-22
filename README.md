@@ -73,6 +73,36 @@ Building enterprise-level scalable automation frameworks with modern quality eng
 
 ---
 
+# Installation
+
+```bash
+npm install
+```
+
+---
+
+# Execute Tests
+
+```bash
+npm test
+```
+
+---
+
+# Execute in Headed Mode
+
+```bash
+npm run test:headed
+```
+
+---
+
+# View HTML Report
+
+```bash
+npm run report
+```
+---
 # Author
 
 Nagaraju Dasi  
