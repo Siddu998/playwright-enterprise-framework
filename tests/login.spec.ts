@@ -1,9 +1,19 @@
 import { test, expect } from '@playwright/test';
 
-test('Verify login page title', async ({ page }) => {
+test.describe('Login Module', () => {
 
-  await page.goto('https://example.com');
+  test('Verify user login', async ({ page }) => {
 
-  await expect(page).toHaveTitle(/Example/);
+    await page.goto('https://example.com');
+
+    await page.locator('#username').fill('testuser');
+
+    await page.locator('#password').fill('password123');
+
+    await page.locator('#login').click();
+
+    await expect(page).toHaveURL(/dashboard/);
+
+  });
 
 });
