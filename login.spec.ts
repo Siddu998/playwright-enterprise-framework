@@ -1,17 +1,29 @@
 import { test, expect } from '@playwright/test';
-import { LoginPageMethods } from '../../pages/login/LoginPageMethods';
-import loginData from '../../test-data/login/loginData.json';
-import { Logger } from '../../utils/logger/Logger';
+import { LoginPageMethods } from '../pages/LoginPageMethods';
+import loginData from '../test-data/loginData.json';
+import { Logger } from '../utils/Logger';
 
 test.describe('Login Module', () => {
 
+  test.beforeEach(async ({ page }) => {
+
+    Logger.info('Starting Test Execution');
+
+    await page.goto('https://example.com');
+
+  });
+
+  test.afterEach(async ({ page }) => {
+
+    Logger.success('Test Execution Completed');
+
+    await page.close();
+
+  });
+
   test('Verify user login', async ({ page }) => {
 
-    Logger.info('Starting Login Test');
-
     const loginPage = new LoginPageMethods(page);
-
-    await loginPage.navigate('https://example.com');
 
     await loginPage.login(
       loginData.validUser.username,
@@ -20,6 +32,6 @@ test.describe('Login Module', () => {
 
     await expect(page).toHaveURL(/dashboard/);
 
-    Logger.info('Login Test Completed Successfully');
   });
+
 });
