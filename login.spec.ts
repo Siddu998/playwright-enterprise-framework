@@ -1,6 +1,9 @@
 import { test, expect } from '../fixtures/baseFixture';
 import loginData from '../test-data/loginData.json';
 import { Logger } from '../utils/Logger';
+import { CustomAssertions } from '../utils/CustomAssertions';
+
+
 
 test.describe('Login Module', () => {
 
@@ -44,7 +47,9 @@ test.describe('Login Module', () => {
     const dashboardVisible =
       await loginPage.verifyDashboardVisible();
 
-    expect(dashboardVisible).toBeTruthy();
+    await CustomAssertions.verifyElementVisible(
+  dashboardVisible
+);
 
   });
 
