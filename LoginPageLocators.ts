@@ -1,11 +1,13 @@
 export class LoginPageLocators {
 
-  static usernameTextbox = '#username';
+  static readonly usernameTextbox = '#username';
 
-  static passwordTextbox = '#password';
+  static readonly passwordTextbox = '#password';
 
-  static loginButton = '#login';
+  static readonly loginButton = '#login';
 
-  static dashboardHeader = '#dashboard';
+  static readonly dashboardHeader = '#dashboard';
+
+  static readonly errorMessage = '.error-message';
 
 }
