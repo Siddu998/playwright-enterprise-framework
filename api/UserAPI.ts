@@ -1,18 +1,35 @@
-import { APIRequestContext } from '@playwright/test';
+import { request, APIRequestContext } from '@playwright/test';
+import { Logger } from '../utils/Logger';
 
 export class UserAPI {
 
-  readonly request: APIRequestContext;
+  private static apiContext: APIRequestContext;
 
-  constructor(request: APIRequestContext) {
-    this.request = request;
+  static async createAPIContext() {
+
+    Logger.info('Creating API Context');
+
+    this.apiContext = await request.newContext({
+
+      baseURL: 'https://reqres.in'
+
+    });
+
   }
 
-  async getUsers() {
+  static async getUsers() {
 
-    const response = await this.request.get('https://reqres.in/api/users');
+    Logger.info('Fetching Users API');
 
-    return response.json();
+    const response = await this.apiContext.get(
+      '/api/users?page=2'
+    );
+
+    Logger.success(
+      `Users API Response Status: ${response.status()}`
+    );
+
+    return response;
 
   }
 
