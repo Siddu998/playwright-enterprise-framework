@@ -1,5 +1,5 @@
 import { Page } from '@playwright/test';
-import { Logger } from '../../utils/logger/Logger';
+import { Logger } from './Logger';
 
 export class BasePage {
 
@@ -23,4 +23,23 @@ export class BasePage {
     Logger.info(`Entering value into locator: ${locator}`);
     await this.page.locator(locator).fill(value);
   }
+
+  async waitForElement(locator: string) {
+    await this.page.locator(locator).waitFor();
+  }
+
+  async getText(locator: string) {
+    return await this.page.locator(locator).textContent();
+  }
+
+  async isElementVisible(locator: string) {
+    return await this.page.locator(locator).isVisible();
+  }
+
+  async takeScreenshot(fileName: string) {
+    await this.page.screenshot({
+      path: `screenshots/${fileName}.png`
+    });
+  }
+
 }
