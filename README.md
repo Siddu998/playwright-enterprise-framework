@@ -12,6 +12,24 @@ Enterprise-grade Playwright + TypeScript automation framework designed for scala
 ![Framework Architecture](./screenshots/framework-architecture.png)
 
 
+---
+
+# Automation Execution Flow
+
+```text
+Test Layer
+   ↓
+Page Layer
+   ↓
+Locator Layer
+   ↓
+Utility Layer
+   ↓
+API Layer
+   ↓
+Reporting & Logs
+```
+
 ## Execution Commands
 
 Run all tests:
