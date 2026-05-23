@@ -13,11 +13,23 @@ test.describe('Login Module', () => {
 
   });
 
-  test.afterEach(async ({ page }) => {
+  test.afterEach(async ({ page }, testInfo) => {
 
-    Logger.success('Test Execution Completed');
+  if (testInfo.status !== testInfo.expectedStatus) {
 
-    await page.close();
+    Logger.error('Test Failed - Capturing Screenshot');
+
+    await page.screenshot({
+      path: `screenshots/${testInfo.title}.png`
+    });
+
+  }
+
+  Logger.success('Test Execution Completed');
+
+  await page.close();
+
+});
 
   });
 
