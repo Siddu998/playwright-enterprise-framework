@@ -1,10 +1,9 @@
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './tests',
-
+  testDir: '../tests',
   timeout: 30000,
-
+  retries: 1,
   use: {
     browserName: 'chromium',
     headless: true,
@@ -12,7 +11,6 @@ export default defineConfig({
     video: 'retain-on-failure',
     trace: 'on-first-retry'
   },
-
   reporter: [
     ['html'],
     ['list']
