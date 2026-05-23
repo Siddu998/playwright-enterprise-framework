@@ -2,6 +2,7 @@ import { Page } from '@playwright/test';
 import { BasePage } from './BasePage';
 import { LoginPageLocators } from './LoginPageLocators';
 import { Logger } from '../utils/Logger';
+import { currentEnv } from '../config/env';
 
 export class LoginPageMethods extends BasePage {
 
@@ -15,7 +16,7 @@ export class LoginPageMethods extends BasePage {
 
     Logger.info('Navigating to Login Page');
 
-    await this.navigate('https://example.com');
+    await this.navigate(currentEnv.baseURL);
 
   }
 
