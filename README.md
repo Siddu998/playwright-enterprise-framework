@@ -66,6 +66,22 @@ npx playwright test tests/login/login.spec.ts
 
 npx playwright test --headed
 
+---
+
+## Generate Allure Report
+
+```bash
+npx allure generate ./allure-results --clean
+```
+
+---
+
+## Open Allure Report
+
+```bash
+npx allure open ./allure-report
+```
+
 npx playwright show-report
 ---
 
