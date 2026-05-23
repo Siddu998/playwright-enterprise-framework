@@ -181,7 +181,23 @@ npm test
 ```bash
 npm run test:headed
 ```
+---
 
+# Docker Execution
+
+## Build Docker Image
+
+```bash
+docker build -t playwright-framework .
+```
+
+---
+
+## Run Docker Container
+
+```bash
+docker run playwright-framework
+```
 ---
 
 # View HTML Report
