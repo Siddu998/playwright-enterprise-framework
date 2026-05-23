@@ -44,7 +44,9 @@ Reporting & Logs
 
 ✅ Logging Support
 
-✅ Test Data Management
+✅ Centralized Test Data Management
+
+✅ Reusable Data Handling Architecture
 
 ✅ Screenshot & Reporting Support
 
