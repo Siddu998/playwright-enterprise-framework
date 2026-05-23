@@ -11,3 +11,16 @@ Enterprise-grade Playwright + TypeScript automation framework.
 - API + UI automation
 - Reporting support
 - Scalable design
+---
+
+# Framework Screenshots
+
+## Playwright Execution Report
+
+![Execution Report](./screenshots/playwright-report.png)
+
+---
+
+## Framework Architecture
+
+![Architecture](./screenshots/framework-architecture.png)
