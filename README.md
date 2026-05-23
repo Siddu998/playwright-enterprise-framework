@@ -16,7 +16,6 @@ Enterprise-grade Playwright + TypeScript automation framework designed for scala
 
 # Automation Execution Flow
 
-```text
 Test Layer
    ↓
 Page Layer
@@ -28,12 +27,11 @@ Utility Layer
 API Layer
    ↓
 Reporting & Logs
-```
 
 ## Execution Commands
 
 Run all tests:
-```bash
+bash
 npx playwright test
 
 npx playwright test tests/login/login.spec.ts
