@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/baseFixture';
-import loginData from '../test-data/loginData.json';
+import { TestDataManager }from '../test-data/TestDataManager';
 import { Logger } from '../utils/Logger';
 import { CustomAssertions } from '../utils/CustomAssertions';
 
@@ -39,9 +39,9 @@ test.describe('Login Module', () => {
 
     await loginPage.login(
 
-      loginData.validUser.username,
-      loginData.validUser.password
-
+      TestDataManager.getLoginData().username,
+      TestDataManager.getLoginData().password
+      
     );
 
     const dashboardVisible =
