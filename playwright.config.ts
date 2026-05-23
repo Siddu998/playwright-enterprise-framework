@@ -24,7 +24,9 @@ export default defineConfig({
 
     ['html'],
 
-    ['list']
+    ['list'],
+
+    ['allure-playwright']
 
   ],
 
