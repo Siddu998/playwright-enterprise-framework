@@ -1,15 +1,14 @@
-import { test, expect } from '@playwright/test';
-import { LoginPageMethods } from '../pages/LoginPageMethods';
+import { test, expect } from '../fixtures/baseFixture';
 import loginData from '../test-data/loginData.json';
 import { Logger } from '../utils/Logger';
 
 test.describe('Login Module', () => {
 
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ loginPage }) => {
 
     Logger.info('Starting Test Execution');
 
-    await page.goto('https://example.com');
+    await loginPage.navigateToLoginPage();
 
   });
 
@@ -22,24 +21,24 @@ test.describe('Login Module', () => {
       );
 
       await page.screenshot({
+
         path: `screenshots/${testInfo.title}.png`
+
       });
 
     }
 
     Logger.success('Test Execution Completed');
 
-    await page.close();
-
   });
 
-  test('Verify user login', async ({ page }) => {
-
-    const loginPage = new LoginPageMethods(page);
+  test('Verify user login', async ({ loginPage }) => {
 
     await loginPage.login(
+
       loginData.validUser.username,
       loginData.validUser.password
+
     );
 
     const dashboardVisible =
