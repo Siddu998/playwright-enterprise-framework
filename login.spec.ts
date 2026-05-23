@@ -15,21 +15,21 @@ test.describe('Login Module', () => {
 
   test.afterEach(async ({ page }, testInfo) => {
 
-  if (testInfo.status !== testInfo.expectedStatus) {
+    if (testInfo.status !== testInfo.expectedStatus) {
 
-    Logger.error('Test Failed - Capturing Screenshot');
+      Logger.error(
+        'Test Failed - Capturing Screenshot'
+      );
 
-    await page.screenshot({
-      path: `screenshots/${testInfo.title}.png`
-    });
+      await page.screenshot({
+        path: `screenshots/${testInfo.title}.png`
+      });
 
-  }
+    }
 
-  Logger.success('Test Execution Completed');
+    Logger.success('Test Execution Completed');
 
-  await page.close();
-
-});
+    await page.close();
 
   });
 
@@ -42,7 +42,10 @@ test.describe('Login Module', () => {
       loginData.validUser.password
     );
 
-    await expect(page).toHaveURL(/dashboard/);
+    const dashboardVisible =
+      await loginPage.verifyDashboardVisible();
+
+    expect(dashboardVisible).toBeTruthy();
 
   });
 
