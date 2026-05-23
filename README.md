@@ -28,6 +28,34 @@ API Layer
    ↓
 Reporting & Logs
 
+---
+
+# Framework Features
+
+✅ Modular Page Object Model (POM)
+
+✅ Separate Locators & Methods Architecture
+
+✅ API + UI Automation Support
+
+✅ Reusable Utility Methods
+
+✅ Environment Configuration Management
+
+✅ Logging Support
+
+✅ Test Data Management
+
+✅ Screenshot & Reporting Support
+
+✅ Scalable Enterprise Framework Design
+
+✅ TypeScript-Based Automation Framework
+
+✅ Playwright HTML Reporting
+
+✅ Retry & Failure Handling
+
 ## Execution Commands
 
 Run all tests:
